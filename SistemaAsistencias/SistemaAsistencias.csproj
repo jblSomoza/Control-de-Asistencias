@@ -49,11 +49,47 @@
     <Compile Include="Datos\AsistenciasController.cs" />
     <Compile Include="Datos\CargoController.cs" />
     <Compile Include="Datos\ConexionMaestraController.cs" />
+    <Compile Include="Datos\ModulosController.cs" />
+    <Compile Include="Datos\PermisosController.cs" />
     <Compile Include="Datos\PersonalController.cs" />
+    <Compile Include="Datos\UsuarioController.cs" />
     <Compile Include="Logica\AsistenciasModel.cs" />
+    <Compile Include="Logica\AsistenteInstalacion\ConexionRemota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logica\AsistenteInstalacion\ConexionRemota.Designer.cs">
+      <DependentUpon>ConexionRemota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logica\AsistenteInstalacion\EleccionServidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logica\AsistenteInstalacion\EleccionServidor.Designer.cs">
+      <DependentUpon>EleccionServidor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logica\AsistenteInstalacion\InstalacionDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logica\AsistenteInstalacion\InstalacionDB.Designer.cs">
+      <DependentUpon>InstalacionDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logica\Bases.cs" />
     <Compile Include="Logica\CargoModel.cs" />
+    <Compile Include="Logica\ModulosModel.cs" />
+    <Compile Include="Logica\PermisosModel.cs" />
     <Compile Include="Logica\Personal.cs" />
+    <Compile Include="Logica\UsuarioModel.cs" />
+    <Compile Include="Presentacion\ControlUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ControlUsuario.Designer.cs">
+      <DependentUpon>ControlUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +110,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Logica\AsistenteInstalacion\EleccionServidor.resx">
+      <DependentUpon>EleccionServidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logica\AsistenteInstalacion\InstalacionDB.resx">
+      <DependentUpon>InstalacionDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ControlUsuario.resx">
+      <DependentUpon>ControlUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +237,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hombre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mujer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

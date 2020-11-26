@@ -16,7 +16,17 @@ namespace SistemaAsistencias
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Presentacion.TomarAsistencias());
+            Presentacion.Login frm = new Presentacion.Login();
+            frm.FormClosed += Frm_FormClosed;
+            frm.ShowDialog();
+            Application.Run();
+        }
+
+        private static void Frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Solo se termina la aplicacion cuando finaliza el ultimo formulario
+            Application.ExitThread();
+            Application.Exit();
         }
     }
 }

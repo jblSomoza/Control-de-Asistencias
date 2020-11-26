@@ -29,5 +29,13 @@ namespace SistemaAsistencias.Presentacion
             control.Dock = DockStyle.Fill;
             PanelPadre.Controls.Add(control);
         }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            PanelPadre.Controls.Clear();
+            ControlUsuario control = new ControlUsuario();
+            control.Dock = DockStyle.Fill;
+            PanelPadre.Controls.Add(control);
+        }
     }
 }
