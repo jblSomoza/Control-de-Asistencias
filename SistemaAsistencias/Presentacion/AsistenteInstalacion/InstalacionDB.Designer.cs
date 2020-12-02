@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstalacionDB));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.Panel4 = new System.Windows.Forms.Panel();
             this.PictureBox2 = new System.Windows.Forms.PictureBox();
             this.Panel6 = new System.Windows.Forms.Panel();
@@ -78,6 +79,10 @@
             this.lblBasededatos = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
             this.Label8 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.TimerCRARINI = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Panel4.SuspendLayout();
@@ -104,6 +109,17 @@
             this.panel1.Size = new System.Drawing.Size(1694, 110);
             this.panel1.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::SistemaAsistencias.Properties.Resources.strix_owl;
+            this.pictureBox1.Location = new System.Drawing.Point(279, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 110);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -115,17 +131,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "SISTEMA DE ASISTENCIA STRIX OWL";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::SistemaAsistencias.Properties.Resources.strix_owl;
-            this.pictureBox1.Location = new System.Drawing.Point(279, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 110);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // Panel4
             // 
@@ -461,8 +466,8 @@
             this.txtEliminarBase.Name = "txtEliminarBase";
             this.txtEliminarBase.Size = new System.Drawing.Size(413, 166);
             this.txtEliminarBase.TabIndex = 589;
-            this.txtEliminarBase.Text = "alter database BASEADACURSO set single_user with rollback immediate \nDROP DATABAS" +
-    "E BASEADACURSO";
+            this.txtEliminarBase.Text = "alter database Asistencia_StrixOwl set single_user with rollback immediate \nDROP " +
+    "DATABASE Asistencia_StrixOwl";
             // 
             // lblRutaInstancia
             // 
@@ -679,6 +684,23 @@
             this.Label8.TabIndex = 618;
             this.Label8.Text = "Nombre de Instancia:";
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 10;
+            // 
+            // timer3
+            // 
+            this.timer3.Interval = 10;
+            // 
+            // timer4
+            // 
+            this.timer4.Interval = 10;
+            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
+            // 
+            // TimerCRARINI
+            // 
+            this.TimerCRARINI.Interval = 10;
+            // 
             // InstalacionDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -690,7 +712,10 @@
             this.Controls.Add(this.Panel2);
             this.Controls.Add(this.panel1);
             this.Name = "InstalacionDB";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InstalacionDB";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.InstalacionDB_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Panel4.ResumeLayout(false);
@@ -764,5 +789,9 @@
         internal System.Windows.Forms.Label lblBasededatos;
         internal System.Windows.Forms.Label Label6;
         internal System.Windows.Forms.Label Label8;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.Timer TimerCRARINI;
     }
 }

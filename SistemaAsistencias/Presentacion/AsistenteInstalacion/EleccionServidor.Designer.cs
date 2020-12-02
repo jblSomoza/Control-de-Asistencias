@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EleccionServidor));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.Panel4 = new System.Windows.Forms.Panel();
             this.Label4 = new System.Windows.Forms.Label();
             this.BtnRemoto = new System.Windows.Forms.Button();
@@ -57,6 +57,17 @@
             this.panel1.Size = new System.Drawing.Size(1346, 100);
             this.panel1.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::SistemaAsistencias.Properties.Resources.strix_owl;
+            this.pictureBox1.Location = new System.Drawing.Point(226, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -68,17 +79,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "SISTEMA DE ASISTENCIA STRIX OWL";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::SistemaAsistencias.Properties.Resources.strix_owl;
-            this.pictureBox1.Location = new System.Drawing.Point(226, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // Panel4
             // 
@@ -207,13 +207,16 @@
             this.Controls.Add(this.Panel4);
             this.Controls.Add(this.panel1);
             this.Name = "EleccionServidor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EleccionServidor";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Panel4.ResumeLayout(false);
             this.Panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+
 
         }
 

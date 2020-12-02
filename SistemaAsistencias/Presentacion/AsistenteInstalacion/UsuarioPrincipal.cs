@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaAsistencias.Logica.AsistenteInstalacion
+namespace SistemaAsistencias.Presentacion.AsistenteInstalacion
 {
-    public partial class InstalacionDB : Form
+    public partial class UsuarioPrincipal : Form
     {
-        public InstalacionDB()
+        public UsuarioPrincipal()
         {
             InitializeComponent();
         }

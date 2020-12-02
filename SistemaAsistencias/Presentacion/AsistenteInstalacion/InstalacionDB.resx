@@ -1520,19 +1520,6 @@
         ZQEcVGetFFaIaCmHrRRVDEJptFFNARsMGo6KKoaA9KaRxRRVs0E21G3WiihFI//Z
 </value>
   </data>
-  <data name="txtCrearUsuarioDb.Text" xml:space="preserve">
-    <value>CREATE LOGIN StrixOwl WITH PASSWORD = 'softwarereal'
-GO
-Use SistemaAsistencias;
-GO
-IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = N'StrixOwl')
-BEGIN
-    CREATE USER [StrixOwl] FOR LOGIN [StrixOwl]
-    EXEC sp_addrolemember N'db_owner', N'StrixOwl'
-    EXEC master..sp_addsrvrolemember @loginame = N'StrixOwl', @rolename = N'sysadmin'
-END;
-GO</value>
-  </data>
   <data name="txtArgumentosini.Text" xml:space="preserve">
     <value>;SQL Server 2014 Configuration File
 [OPTIONS]
@@ -1680,535 +1667,542 @@ NPENABLED="0"
 
 BROWSERSVCSTARTUPTYPE="Disabled"</value>
   </data>
+  <data name="txtCrearUsuarioDb.Text" xml:space="preserve">
+    <value>CREATE LOGIN StrixOwl WITH PASSWORD = 'softwarereal'
+GO
+Use SistemaAsistencias;
+GO
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = N'StrixOwl')
+BEGIN
+    CREATE USER [StrixOwl] FOR LOGIN [StrixOwl]
+    EXEC sp_addrolemember N'db_owner', N'StrixOwl'
+    EXEC master..sp_addsrvrolemember @loginame = N'StrixOwl', @rolename = N'sysadmin'
+END;
+GO</value>
+  </data>
   <data name="txtCrear_procedimientos.Text" xml:space="preserve">
     <value>USE [master]
 GO
 IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
 begin
-EXEC [ORUS369].[dbo].[sp_fulltext_database] @action = 'enable'
+EXEC [Asistencia_StrixOwl].[dbo].[sp_fulltext_database] @action = 'enable'
 end
 GO
-ALTER DATABASE [ORUS369] SET ANSI_NULL_DEFAULT OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET ANSI_NULL_DEFAULT OFF 
 GO
-ALTER DATABASE [ORUS369] SET ANSI_NULLS OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET ANSI_NULLS OFF 
 GO
-ALTER DATABASE [ORUS369] SET ANSI_PADDING OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET ANSI_PADDING OFF 
 GO
-ALTER DATABASE [ORUS369] SET ANSI_WARNINGS OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET ANSI_WARNINGS OFF 
 GO
-ALTER DATABASE [ORUS369] SET ARITHABORT OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET ARITHABORT OFF 
 GO
-ALTER DATABASE [ORUS369] SET AUTO_CLOSE OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET AUTO_CLOSE ON 
 GO
-ALTER DATABASE [ORUS369] SET AUTO_SHRINK OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET AUTO_SHRINK OFF 
 GO
-ALTER DATABASE [ORUS369] SET AUTO_UPDATE_STATISTICS ON 
+ALTER DATABASE [Asistencia_StrixOwl] SET AUTO_UPDATE_STATISTICS ON 
 GO
-ALTER DATABASE [ORUS369] SET CURSOR_CLOSE_ON_COMMIT OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET CURSOR_CLOSE_ON_COMMIT OFF 
 GO
-ALTER DATABASE [ORUS369] SET CURSOR_DEFAULT  GLOBAL 
+ALTER DATABASE [Asistencia_StrixOwl] SET CURSOR_DEFAULT  GLOBAL 
 GO
-ALTER DATABASE [ORUS369] SET CONCAT_NULL_YIELDS_NULL OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET CONCAT_NULL_YIELDS_NULL OFF 
 GO
-ALTER DATABASE [ORUS369] SET NUMERIC_ROUNDABORT OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET NUMERIC_ROUNDABORT OFF 
 GO
-ALTER DATABASE [ORUS369] SET QUOTED_IDENTIFIER OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET QUOTED_IDENTIFIER OFF 
 GO
-ALTER DATABASE [ORUS369] SET RECURSIVE_TRIGGERS OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET RECURSIVE_TRIGGERS OFF 
 GO
-ALTER DATABASE [ORUS369] SET  DISABLE_BROKER 
+ALTER DATABASE [Asistencia_StrixOwl] SET  ENABLE_BROKER 
 GO
-ALTER DATABASE [ORUS369] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
 GO
-ALTER DATABASE [ORUS369] SET DATE_CORRELATION_OPTIMIZATION OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET DATE_CORRELATION_OPTIMIZATION OFF 
 GO
-ALTER DATABASE [ORUS369] SET TRUSTWORTHY OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET TRUSTWORTHY OFF 
 GO
-ALTER DATABASE [ORUS369] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET ALLOW_SNAPSHOT_ISOLATION OFF 
 GO
-ALTER DATABASE [ORUS369] SET PARAMETERIZATION SIMPLE 
+ALTER DATABASE [Asistencia_StrixOwl] SET PARAMETERIZATION SIMPLE 
 GO
-ALTER DATABASE [ORUS369] SET READ_COMMITTED_SNAPSHOT OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET READ_COMMITTED_SNAPSHOT OFF 
 GO
-ALTER DATABASE [ORUS369] SET HONOR_BROKER_PRIORITY OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET HONOR_BROKER_PRIORITY OFF 
 GO
-ALTER DATABASE [ORUS369] SET RECOVERY SIMPLE 
+ALTER DATABASE [Asistencia_StrixOwl] SET RECOVERY SIMPLE 
 GO
-ALTER DATABASE [ORUS369] SET  MULTI_USER 
+ALTER DATABASE [Asistencia_StrixOwl] SET  MULTI_USER 
 GO
-ALTER DATABASE [ORUS369] SET PAGE_VERIFY CHECKSUM  
+ALTER DATABASE [Asistencia_StrixOwl] SET PAGE_VERIFY CHECKSUM  
 GO
-ALTER DATABASE [ORUS369] SET DB_CHAINING OFF 
+ALTER DATABASE [Asistencia_StrixOwl] SET DB_CHAINING OFF 
 GO
-ALTER DATABASE [ORUS369] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+ALTER DATABASE [Asistencia_StrixOwl] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
 GO
-ALTER DATABASE [ORUS369] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+ALTER DATABASE [Asistencia_StrixOwl] SET TARGET_RECOVERY_TIME = 60 SECONDS 
 GO
-ALTER DATABASE [ORUS369] SET DELAYED_DURABILITY = DISABLED 
+ALTER DATABASE [Asistencia_StrixOwl] SET DELAYED_DURABILITY = DISABLED 
 GO
-ALTER DATABASE [ORUS369] SET QUERY_STORE = OFF
+ALTER DATABASE [Asistencia_StrixOwl] SET QUERY_STORE = OFF
 GO
-USE [ORUS369]
+USE [Asistencia_StrixOwl]
 GO
-/****** Object:  Table [dbo].[ASISTENCIAS]    Script Date: 03/11/2020 11:48:24 a.m. ******/
+/****** Object:  Table [dbo].[Asistencias]    Script Date: 12/1/2020 7:19:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[ASISTENCIAS](
-	[Id_asistencia] [int] IDENTITY(1,1) NOT NULL,
-	[Id_personal] [int] NULL,
-	[Fecha_entrada] [datetime] NULL,
-	[Fecha_salida] [datetime] NULL,
-	[Estado] [varchar](50) NULL,
-	[Horas] [numeric](18, 2) NULL,
-	[Observacion] [varchar](max) NULL,
- CONSTRAINT [PK_ASISTENCIAS] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[Asistencias](
+	[idAsistencia] [int] IDENTITY(1,1) NOT NULL,
+	[idPersonal] [int] NULL,
+	[fechaEntrada] [datetime] NULL,
+	[fechaSalida] [datetime] NULL,
+	[estado] [varchar](50) NULL,
+	[horas] [numeric](18, 2) NULL,
+	[observacion] [varchar](256) NULL,
+PRIMARY KEY CLUSTERED 
 (
-	[Id_asistencia] ASC
+	[idAsistencia] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Cargo]    Script Date: 03/11/2020 11:48:24 a.m. ******/
+/****** Object:  Table [dbo].[Cargo]    Script Date: 12/1/2020 7:19:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Cargo](
-	[Id_cargo] [int] IDENTITY(1,1) NOT NULL,
-	[Cargo] [varchar](max) NULL,
-	[SueldoPorHora] [numeric](18, 2) NULL,
- CONSTRAINT [PK_Cargo] PRIMARY KEY CLUSTERED 
+	[idCargo] [int] IDENTITY(1,1) NOT NULL,
+	[cargo] [varchar](max) NULL,
+	[sueldoPorHora] [numeric](18, 2) NULL,
+PRIMARY KEY CLUSTERED 
 (
-	[Id_cargo] ASC
+	[idCargo] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Modulos]    Script Date: 03/11/2020 11:48:24 a.m. ******/
+/****** Object:  Table [dbo].[Modulos]    Script Date: 12/1/2020 7:19:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Modulos](
-	[IdModulo] [int] IDENTITY(1,1) NOT NULL,
-	[Modulo] [varchar](max) NULL,
- CONSTRAINT [PK_Modulos] PRIMARY KEY CLUSTERED 
+	[idModulo] [int] IDENTITY(1,1) NOT NULL,
+	[modulo] [varchar](max) NULL,
+PRIMARY KEY CLUSTERED 
 (
-	[IdModulo] ASC
+	[idModulo] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Permisos]    Script Date: 03/11/2020 11:48:24 a.m. ******/
+/****** Object:  Table [dbo].[Permisos]    Script Date: 12/1/2020 7:19:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Permisos](
-	[IdPermiso] [int] IDENTITY(1,1) NOT NULL,
-	[IdModulo] [int] NULL,
-	[IdUsuario] [int] NULL,
- CONSTRAINT [PK_Permisos] PRIMARY KEY CLUSTERED 
+	[idPermiso] [int] IDENTITY(1,1) NOT NULL,
+	[idModulo] [int] NULL,
+	[idUsuario] [int] NULL,
+PRIMARY KEY CLUSTERED 
 (
-	[IdPermiso] ASC
+	[idPermiso] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Personal]    Script Date: 03/11/2020 11:48:24 a.m. ******/
+/****** Object:  Table [dbo].[Personal]    Script Date: 12/1/2020 7:19:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Personal](
-	[Id_personal] [int] IDENTITY(1,1) NOT NULL,
-	[Nombres] [varchar](max) NULL,
-	[Identificacion] [varchar](max) NULL,
-	[Pais] [varchar](max) NULL,
-	[Id_cargo] [int] NULL,
-	[SueldoPorHora] [numeric](18, 2) NULL,
-	[Estado] [varchar](max) NULL,
+	[idPersonal] [int] IDENTITY(1,1) NOT NULL,
+	[nombres] [varchar](100) NOT NULL,
+	[apellidos] [varchar](100) NOT NULL,
+	[identificacion] [varchar](max) NOT NULL,
+	[pais] [varchar](50) NOT NULL,
+	[idCargo] [int] NOT NULL,
+	[sueldoPorHora] [numeric](18, 2) NOT NULL,
+	[estado] [varchar](max) NOT NULL,
 	[codigo] [varchar](max) NULL,
- CONSTRAINT [PK_Personal] PRIMARY KEY CLUSTERED 
+PRIMARY KEY CLUSTERED 
 (
-	[Id_personal] ASC
+	[idPersonal] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Usuarios]    Script Date: 03/11/2020 11:48:24 a.m. ******/
+/****** Object:  Table [dbo].[Usuarios]    Script Date: 12/1/2020 7:19:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Usuarios](
 	[idUsuario] [int] IDENTITY(1,1) NOT NULL,
-	[NombresApellidos] [varchar](50) NULL,
-	[Login] [varchar](50) NULL,
-	[Password] [varchar](50) NULL,
-	[Icono] [image] NULL,
-	[Estado] [varchar](50) NULL,
- CONSTRAINT [PK_Usuarios] PRIMARY KEY CLUSTERED 
+	[nombres] [varchar](128) NULL,
+	[apellidos] [varchar](128) NULL,
+	[usuario] [varchar](64) NULL,
+	[clave] [varchar](32) NULL,
+	[icono] [image] NULL,
+	[estado] [varchar](50) NULL,
+PRIMARY KEY CLUSTERED 
 (
 	[idUsuario] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[ASISTENCIAS]  WITH CHECK ADD  CONSTRAINT [FK_ASISTENCIAS_Personal] FOREIGN KEY([Id_personal])
-REFERENCES [dbo].[Personal] ([Id_personal])
+ALTER TABLE [dbo].[Asistencias]  WITH CHECK ADD  CONSTRAINT [FK_Asistencias_Personal] FOREIGN KEY([idPersonal])
+REFERENCES [dbo].[Personal] ([idPersonal])
 GO
-ALTER TABLE [dbo].[ASISTENCIAS] CHECK CONSTRAINT [FK_ASISTENCIAS_Personal]
+ALTER TABLE [dbo].[Asistencias] CHECK CONSTRAINT [FK_Asistencias_Personal]
 GO
-ALTER TABLE [dbo].[Permisos]  WITH CHECK ADD  CONSTRAINT [FK_Permisos_Modulos] FOREIGN KEY([IdModulo])
-REFERENCES [dbo].[Modulos] ([IdModulo])
+ALTER TABLE [dbo].[Permisos]  WITH CHECK ADD  CONSTRAINT [FK_Permisos_Modulos] FOREIGN KEY([idModulo])
+REFERENCES [dbo].[Modulos] ([idModulo])
 GO
 ALTER TABLE [dbo].[Permisos] CHECK CONSTRAINT [FK_Permisos_Modulos]
 GO
-ALTER TABLE [dbo].[Permisos]  WITH CHECK ADD  CONSTRAINT [FK_Permisos_Usuarios] FOREIGN KEY([IdUsuario])
+ALTER TABLE [dbo].[Permisos]  WITH CHECK ADD  CONSTRAINT [FK_Permisos_Usuarios] FOREIGN KEY([idUsuario])
 REFERENCES [dbo].[Usuarios] ([idUsuario])
 GO
 ALTER TABLE [dbo].[Permisos] CHECK CONSTRAINT [FK_Permisos_Usuarios]
 GO
-ALTER TABLE [dbo].[Personal]  WITH CHECK ADD  CONSTRAINT [FK_Personal_Cargo] FOREIGN KEY([Id_cargo])
-REFERENCES [dbo].[Cargo] ([Id_cargo])
+ALTER TABLE [dbo].[Personal]  WITH CHECK ADD  CONSTRAINT [FK_Personal_Cargo] FOREIGN KEY([idCargo])
+REFERENCES [dbo].[Cargo] ([idCargo])
 GO
 ALTER TABLE [dbo].[Personal] CHECK CONSTRAINT [FK_Personal_Cargo]
 GO
-/****** Object:  StoredProcedure [dbo].[buscar_usuarios]    Script Date: 03/11/2020 11:48:24 a.m. ******/
+/****** Object:  StoredProcedure [dbo].[buscarAsistenciaId]    Script Date: 12/1/2020 7:19:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create proc [dbo].[buscar_usuarios]
+create proc [dbo].[buscarAsistenciaId]
+@idPersonal int
+as
+SELECT * FROM Asistencias 
+where idPersonal = @idPersonal AND estado = 'ENTRADA'
+GO
+/****** Object:  StoredProcedure [dbo].[confirmarSalida]    Script Date: 12/1/2020 7:19:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[confirmarSalida]
+@idPersonal int,
+@fechaSalida datetime,
+@horas numeric(18,2)
+as
+UPDATE Asistencias SET fechaSalida = @fechaSalida, horas = @horas, estado = 'SALIDA'
+	WHERE idPersonal = @idPersonal AND estado = 'ENTRADA'
+GO
+/****** Object:  StoredProcedure [dbo].[insertarAsistencias]    Script Date: 12/1/2020 7:19:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[insertarAsistencias]
+@idPersonal int,
+@fechaEntrada datetime,
+@fechaSalida datetime,
+@estado	varchar(50),
+@horas numeric(18,2),
+@observacion Varchar(256)
+as
+INSERT INTO Asistencias(idPersonal, fechaEntrada, fechaSalida, estado, horas, observacion)
+	VALUES(@idPersonal, @fechaEntrada, @fechaSalida, @estado, @horas, @observacion)
+GO
+/****** Object:  StoredProcedure [dbo].[proc_buscarCargos]    Script Date: 12/1/2020 7:19:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[proc_buscarCargos]
+@buscador VARCHAR(50)
+as
+SELECT idCargo, Cargo, sueldoPorHora AS [Sueldo por hora] FROM Cargo
+WHERE cargo LIKE '%' + @buscador + '%'
+GO
+/****** Object:  StoredProcedure [dbo].[proc_buscarPersona]    Script Date: 12/1/2020 7:19:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROC [dbo].[proc_buscarPersona]
+@desde int,
+@hasta int,
 @buscador varchar(50)
 as
-select * from Usuarios 
-where Login+NombresApellidos Like '%' + @buscador +'%'
-GO
-/****** Object:  StoredProcedure [dbo].[buscarAsistenciasId]    Script Date: 03/11/2020 11:48:24 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create proc [dbo].[buscarAsistenciasId]
-@Idpersonal int
-as
-select * from ASISTENCIAS
-where Id_personal=@Idpersonal and ASISTENCIAS.Estado='ENTRADA'
-GO
-/****** Object:  StoredProcedure [dbo].[buscarCargos]    Script Date: 03/11/2020 11:48:24 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create proc [dbo].[buscarCargos]
-@buscador varchar(50)
-as
-select Id_cargo,Cargo,SueldoPorHora as Sueldo  from Cargo
-where Cargo lIKE '%' + @buscador +'%'
-GO
-/****** Object:  StoredProcedure [dbo].[BuscarPersonal]    Script Date: 03/11/2020 11:48:24 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE proc [dbo].[BuscarPersonal]
-@Desde int,
-@Hasta int,
-@Buscador varchar(50)
-as
-Set Nocount On;
-Select 
-Id_personal,Nombres,Identificacion,SueldoPorHora,Cargo,Id_cargo,Estado,codigo,Pais
-from
-(Select Id_personal ,Nombres,Identificacion,Personal.SueldoPorHora,Cargo.Cargo,Personal.Id_cargo,Estado,codigo,Pais,
-Row_Number() Over(Order by Id_personal) 'Numero_de_fila'
-from Personal
-inner join Cargo on Cargo.Id_cargo=Personal.Id_cargo ) as Paginado
-Where (Paginado.Numero_de_fila &gt;=@Desde) and (Paginado.Numero_de_fila&lt;=@Hasta)
-and (Nombres + Identificacion Like '%' + @Buscador + '%')
-GO
-/****** Object:  StoredProcedure [dbo].[BuscarPersonalIdentidad]    Script Date: 03/11/2020 11:48:24 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create proc [dbo].[BuscarPersonalIdentidad]
-@Buscador varchar(50)
-as
-select * from Personal 
-where Identificacion=@Buscador
-GO
-/****** Object:  StoredProcedure [dbo].[ConfirmarSalida]    Script Date: 03/11/2020 11:48:24 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create proc [dbo].[ConfirmarSalida]
-@Id_personal as int,
-@Fecha_salida DATETIME,
-@Horas NUMERIC(18,2)
-as
-Update ASISTENCIAS set
-Fecha_salida =@Fecha_salida ,
-Horas =@Horas ,
-Estado='SALIDA'
-where Id_personal   =@Id_personal and Estado='ENTRADA'
-GO
-/****** Object:  StoredProcedure [dbo].[editar_Cargo]    Script Date: 03/11/2020 11:48:24 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE PROC [dbo].[editar_Cargo]
-@id int,
-@Cargo varchar(max)
-,@Sueldo as numeric(18,2)
-as
-if EXISTS (SELECT Cargo FROM Cargo  where Cargo = @Cargo and Id_cargo&lt;&gt;@id  )
-RAISERROR ('YA EXISTE UN CARGO CON ESTE NOMBRE, Ingrese de nuevo', 16,1)
-else
-update  Cargo set Cargo=@Cargo, SueldoPorHora=@Sueldo
-where Id_cargo=@id
-GO
-/****** Object:  StoredProcedure [dbo].[editar_usuarios]    Script Date: 03/11/2020 11:48:24 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create proc [dbo].[editar_usuarios]
-@idusuario int,
-@nombres varchar(50),
-@Password varchar(50)
-,@Icono IMAGE,
-@Login as varchar(50)
-as
-if EXISTS (SELECT Login,idUsuario FROM Usuarios where Login  = @login  AND idUsuario&lt;&gt;@idUsuario  )
-RAISERROR ('Usuario en Uso, usa otro nombre de Usuario por favor', 16,1)
-else 
 
-update Usuarios set NombresApellidos= @nombres,Password =@Password , Icono=@Icono
- ,Login =@Login 
- where idUsuario = @idusuario 
+SET Nocount ON;
+SELECT 
+idPersonal, nombres, apellidos, identificacion, sueldoPorHora, cargo, idCargo, estado, codigo, Pais
+FROM
+(SELECT idPersonal, nombres, apellidos, identificacion, Personal.sueldoPorHora,  Cargo.cargo, Personal.idCargo, estado, codigo, Pais,
+ROW_NUMBER() Over(Order by idPersonal) 'Numero_de_fila'
+FROM Personal 
+INNER JOIN Cargo ON Cargo.idCargo = Personal.idCargo) as Paginado
+WHERE (nombres + apellidos + identificacion LIKE '%' + @buscador + '%')
 GO
-/****** Object:  StoredProcedure [dbo].[editarPersonal]    Script Date: 03/11/2020 11:48:24 a.m. ******/
+/****** Object:  StoredProcedure [dbo].[proc_buscarPersonalIdentidad]    Script Date: 12/1/2020 7:19:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create proc [dbo].[editarPersonal]
-@Id_personal int,
-@Nombres as varchar(max),
-@Identificacion varchar(max),
-@Pais varchar(max),
-@Id_cargo int,
-@Sueldo_por_hora numeric(18,2)
+CREATE PROCEDURE [dbo].[proc_buscarPersonalIdentidad]
+@buscador varchar(100)
+AS
+SELECT * FROM Personal
+	WHERE identificacion = @buscador
+GO
+/****** Object:  StoredProcedure [dbo].[proc_buscarUsuario]    Script Date: 12/1/2020 7:19:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[proc_buscarUsuario]
+@buscador varchar(64)
+AS 
+SELECT * FROM Usuarios WHERE usuario + nombres + apellidos LIKE '%' + @buscador +'%'
+GO
+/****** Object:  StoredProcedure [dbo].[proc_Cargo]    Script Date: 12/1/2020 7:19:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[proc_Cargo]
+@idCargo INT,
+@cargo varchar(max),
+@sueldoPorHora numeric(18,2),
+@cargoTipo varchar(1)
+AS
+BEGIN
+	IF(@cargoTipo = 'N')
+	BEGIN
+		IF EXISTS (SELECT Cargo FROM Cargo WHERE Cargo = @cargo)
+		RAISERROR('YA EXISTE UN CARGO CON ESTE NOMBRE, INGRESE DE NUEVE', 16,2)
+		ELSE
+		BEGIN
+			INSERT INTO Cargo(cargo, sueldoPorHora) VALUES
+				(@cargo, @sueldoPorHora)
+		END
+	END
+	ELSE IF(@cargoTipo = 'M')
+	BEGIN
+		IF EXISTS (SELECT Cargo FROM Cargo WHERE Cargo = @cargo AND idCargo != @idCargo)
+		RAISERROR('YA EXISTE UN CARGO CON ESTE NOMBRE, INGRESE DE NUVEO', 16,2)
+		ELSE
+		BEGIN
+			UPDATE Cargo SET cargo =  @cargo, sueldoPorHora = @sueldoPorHora
+				WHERE idCargo = @idCargo
+		END
+	END	
+END
+GO
+/****** Object:  StoredProcedure [dbo].[proc_MostrarPermisos]    Script Date: 12/1/2020 7:19:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROC [dbo].[proc_MostrarPermisos]
+@idUsuario int
+AS
+SELECT idModulo FROM Permisos WHERE idUsuario = @idUsuario
+GO
+/****** Object:  StoredProcedure [dbo].[proc_mostrarPersonal]    Script Date: 12/1/2020 7:19:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROC [dbo].[proc_mostrarPersonal]
+@desde int,
+@hasta int
 as
-if Exists(Select Identificacion from Personal where Identificacion=@Identificacion and Id_personal &lt;&gt;@Id_personal)
-Raiserror('Ya existe un registro con esta Identificacion',16,1)
-else
-Update Personal set
-Nombres=@Nombres ,Identificacion=@Identificacion,Pais=@Pais,Id_cargo =@Id_cargo ,SueldoPorHora =@Sueldo_por_hora 
-where Id_personal=@Id_personal
-GO
-/****** Object:  StoredProcedure [dbo].[eliminar_Permisos]    Script Date: 03/11/2020 11:48:24 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create PROC [dbo].[eliminar_Permisos]
-@IdUsuario As int
+--declare @nombre VARCHAR(MAX)
+--SET @nombre = (SELECT CONCAT(nombres, ' ' ,apellidos) FROM Personal)
 
-As
-DELETE FROM Permisos
-WHERE IdUsuario=@IdUsuario
+SET Nocount ON;
+SELECT 
+idPersonal, nombres, apellidos, identificacion, sueldoPorHora, cargo, idCargo, estado, codigo, Pais
+FROM
+(SELECT idPersonal, nombres, apellidos, identificacion, Personal.sueldoPorHora,  Cargo.cargo, Personal.idCargo, estado, codigo, Pais,
+ROW_NUMBER() Over(Order by idPersonal) 'Numero_de_fila'
+FROM Personal 
+INNER JOIN Cargo ON Cargo.idCargo = Personal.idCargo) as Paginado
+WHERE (Paginado.Numero_de_fila &gt;= @desde) AND (Paginado.Numero_de_fila &lt;= @hasta)
 GO
-/****** Object:  StoredProcedure [dbo].[eliminar_usuarios]    Script Date: 03/11/2020 11:48:24 a.m. ******/
+/****** Object:  StoredProcedure [dbo].[proc_ObtenerIdUsuario]    Script Date: 12/1/2020 7:19:19 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create proc [dbo].[eliminar_usuarios]
-@idusuario int,
-@login varchar(50)
+CREATE PROCEDURE [dbo].[proc_ObtenerIdUsuario]
+@usuario varchar(50)
+AS
+select idUsuario from Usuarios where usuario = @usuario
+GO
+/****** Object:  StoredProcedure [dbo].[proc_Permisos]    Script Date: 12/1/2020 7:19:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[proc_Permisos]
+@idPermiso int,
+@idModulo int,
+@idUsuario int,
+@permisoTip VARCHAR(50)
+AS
+BEGIN
+	IF(@permisoTip = 'N')
+	BEGIN		
+		INSERT INTO Permisos(idModulo, idUsuario)
+			VALUES(@idModulo, @idUsuario)
+	END
+	ELSE IF(@permisoTip = 'E')
+	BEGIN
+		DELETE FROM Permisos WHERE idUsuario = @idUsuario
+	END
+END
+GO
+/****** Object:  StoredProcedure [dbo].[proc_Personal]    Script Date: 12/1/2020 7:19:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[proc_Personal]
+@idPersonal INT,
+@nombres VARCHAR(MAX),
+@apellidos VARCHAR(MAX),
+@identificacion VARCHAR(MAX),
+@pais VARCHAR(MAX),
+@idCargo INT,
+@sueldoPorHora NUMERIC(18,2),
+@estado VARCHAR(MAX)
+AS
+
+declare @codigo INT
+SET @codigo = (SELECT COUNT(codigo) + 1 FROM Personal)
+
+BEGIN
+	IF(@estado = 'N')
+	BEGIN
+		IF EXISTS(SELECT identificacion FROM Personal WHERE identificacion = @identificacion)
+			RAISERROR('YA EXISTE UN REGISTRO CON ESTA IDENTIFICACION', 16,1)
+		ELSE
+		BEGIN
+			INSERT INTO Personal(nombres, apellidos, identificacion, pais, idCargo, sueldoPorHora, estado, codigo)
+				VALUES(@nombres, @apellidos, @identificacion, @pais, @idCargo, @sueldoPorHora, 'ACTIVO', @codigo)
+		END
+	END
+	ELSE IF(@estado = 'M')
+	BEGIN
+		IF EXISTS(SELECT identificacion FROM Personal WHERE identificacion = @identificacion AND idPersonal != @idPersonal)
+			RAISERROR('YA EXISTE UN REGISTRO CON ESTA IDENTIFICACION', 16,1)
+		ELSE
+		BEGIN
+			UPDATE Personal SET nombres = @nombres, apellidos = @apellidos, identificacion = @identificacion, pais = @pais,
+				idCargo = @idCargo, sueldoPorHora = @sueldoPorHora
+				WHERE idPersonal = @idPersonal
+		END
+	END
+	ELSE IF(@estado = 'E')
+	BEGIN
+		UPDATE Personal SET estado = 'ELIMINADO' WHERE idPersonal = @idPersonal AND identificacion = @identificacion
+	END
+END
+GO
+/****** Object:  StoredProcedure [dbo].[proc_restaurarPersonal]    Script Date: 12/1/2020 7:19:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[proc_restaurarPersonal]
+@idPersonal int
+AS
+UPDATE Personal SET estado = 'ACTIVO' 
+WHERE idPersonal = @idPersonal
+GO
+/****** Object:  StoredProcedure [dbo].[proc_restaurarUsuario]    Script Date: 12/1/2020 7:19:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[proc_restaurarUsuario]
+@idUsuario int
+AS 
+UPDATE Usuarios SET estado = 'ACTIVO' WHERE idUsuario = @idUsuario AND usuario != 'admin'
+GO
+/****** Object:  StoredProcedure [dbo].[proc_Usuario]    Script Date: 12/1/2020 7:19:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[proc_Usuario]
+@idUsuario int,
+@nombres varchar(128),
+@apellidos varchar(128),
+@usuario varchar(64),
+@clave varchar(32),
+@icono image,
+@estado varchar(50)
+AS
+BEGIN
+	IF(@estado = 'N')
+	BEGIN
+		IF EXISTS (SELECT * FROM Usuarios WHERE usuario = @usuario )
+		RAISERROR ('YA EXISTE UN REGISTRO CON ESE USUARIO, POR FAVOR INGRESE DE NUEVO', 16,1)
+		ELSE
+		INSERT INTO Usuarios(nombres, apellidos, usuario, clave, icono, estado)
+			VALUES(@nombres, @apellidos, @usuario, @clave, @icono, 'ACTIVO')
+	END
+	ELSE IF(@estado = 'M')
+	BEGIN
+		IF EXISTS(SELECT idUsuario, nombres, apellidos FROM Usuarios WHERE usuario = @usuario AND idUsuario &lt;&gt; @idUsuario)
+		RAISERROR ('Usuario en Uso, usa otro nombre de Usuario por favor', 16,1)
+		ELSE
+		BEGIN
+			UPDATE Usuarios SET nombres = @nombres, apellidos = @apellidos, clave = @clave, icono = @icono,
+			usuario = @usuario WHERE idUsuario = @idUsuario
+		END
+	END
+	ELSE IF(@estado = 'E')
+	BEGIN
+		IF EXISTS(SELECT usuario FROM Usuarios WHERE @usuario = 'admin')
+		Raiserror('El Usuario *Admin* es Inborrable, si se borraria Eliminarias el Acceso al Sistema de por vida, Accion Denegada',16,1)
+		ELSE
+		BEGIN
+			UPDATE Usuarios SET estado = 'ELIMINADO' WHERE idUsuario = @idUsuario AND usuario != 'admin'
+		END
+	END
+END
+GO
+/****** Object:  StoredProcedure [dbo].[proc_validarUsuario]    Script Date: 12/1/2020 7:19:19 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[proc_validarUsuario]
+@clave varchar(50),
+@usuario varchar(50)
 as
-if Exists(Select Login  from Usuarios where @login = 'admin' )
-Raiserror('El Usuario *Admin* es Inborrable, si se borraria Eliminarias el Acceso al Sistema de por vida, Accion Denegada',16,1)
-else
-update Usuarios set Estado ='ELIMINADO'
-where idUsuario=@idusuario and Login &lt;&gt; 'admin'
-GO
-/****** Object:  StoredProcedure [dbo].[eliminarPersonal]    Script Date: 03/11/2020 11:48:24 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create proc [dbo].[eliminarPersonal]
-@Idpersonal int
-as
-Update Personal set Estado ='ELIMINADO'
-where Id_personal = @Idpersonal 
-GO
-/****** Object:  StoredProcedure [dbo].[Insertar_ASISTENCIAS]    Script Date: 03/11/2020 11:48:24 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create proc [dbo].[Insertar_ASISTENCIAS]
-   @Id_personal INT,
-   @Fecha_entrada DATETIME,
-   @Fecha_salida DATETIME,
-   @Estado VARCHAR(50),
-    @Horas numeric(18,2),
-	@Observacion varchar(max)
-	as
-	insert into ASISTENCIAS
-	Values(@Id_personal,
-	@Fecha_entrada,
-	@Fecha_salida,
-	@Estado,
-	@Horas,
-	@Observacion)
-GO
-/****** Object:  StoredProcedure [dbo].[insertar_Cargo]    Script Date: 03/11/2020 11:48:24 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create procedure [dbo].[insertar_Cargo]
-@Cargo varchar(max),
-@SueldoPorHora numeric(18,2)
-as
-if EXISTS (SELECT Cargo FROM Cargo  where Cargo = @Cargo  )
-RAISERROR ('YA EXISTE UN CARGO CON ESTE NOMBRE, Ingrese de nuevo', 16,1)
-else
-insert into Cargo  values (@Cargo, @SueldoPorHora)
-GO
-/****** Object:  StoredProcedure [dbo].[insertar_Permisos]    Script Date: 03/11/2020 11:48:24 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create PROC [dbo].[insertar_Permisos]
-@IdModulo As int,
-@IdUsuario As int
-As
-INSERT INTO Permisos
-Values (
-@IdModulo,
-@IdUsuario)
-GO
-/****** Object:  StoredProcedure [dbo].[insertar_usuario]    Script Date: 03/11/2020 11:48:24 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create proc [dbo].[insertar_usuario]
-@nombres varchar(50),
-@Login varchar(50),
-@Password varchar(50)
-,@Icono image,
-@Estado varchar(50)
-as 
-if EXISTS(SELECT Login FROM Usuarios where Login  = @login  )
-RAISERROR ('YA EXISTE UN REGISTRO CON ESE USUARIO, POR FAVOR INGRESE DE NUEVO', 16,1)
-else
-insert into Usuarios 
-values (@nombres, @Login, @Password ,@Icono ,@Estado)
-GO
-/****** Object:  StoredProcedure [dbo].[InsertarPersonal]    Script Date: 03/11/2020 11:48:24 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE proc [dbo].[InsertarPersonal]
-@Nombres varchar(max),
-@Identificacion varchar(max),
-@Pais varchar(max),
-@Id_cargo int,
-@SueldoPorHora numeric(18,2)
-as
-declare @Estado varchar(max)
-declare @codigo varchar(max)
-declare @Id_personal int
-set @Estado='ACTIVO'
-set @codigo='-'
-if Exists(select Identificacion from Personal where Identificacion=@Identificacion)
-Raiserror('Ya existe un registro con esta Identificacion',16,1)
-else
-Insert into Personal 
-values(@Nombres ,
-@Identificacion,
-@Pais ,
-@Id_cargo ,
-@SueldoPorHora ,
-@Estado ,
-@codigo )
-Select @Id_personal=scope_identity()
-Update Personal set codigo = @Id_personal where Id_personal=@Id_personal
-GO
-/****** Object:  StoredProcedure [dbo].[mostrar_Permisos]    Script Date: 03/11/2020 11:48:25 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create proc [dbo].[mostrar_Permisos]
-@idusuario int
-as
-select IdModulo from Permisos where IdUsuario=@idusuario
-GO
-/****** Object:  StoredProcedure [dbo].[mostrarPersonal]    Script Date: 03/11/2020 11:48:25 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE proc [dbo].[mostrarPersonal]
-@Desde int,
-@Hasta int
-as
-Set Nocount On;
-Select 
-Id_personal,Nombres,Identificacion,SueldoPorHora,Cargo,Id_cargo,Estado,codigo,Pais
-from
-(Select Id_personal ,Nombres,Identificacion,Personal.SueldoPorHora,Cargo.Cargo,Personal.Id_cargo,Estado,codigo,Pais,
-Row_Number() Over(Order by Id_personal) 'Numero_de_fila'
-from Personal
-inner join Cargo on Cargo.Id_cargo=Personal.Id_cargo ) as Paginado
-Where (Paginado.Numero_de_fila &gt;=@Desde) and (Paginado.Numero_de_fila&lt;=@Hasta)
-GO
-/****** Object:  StoredProcedure [dbo].[ObtenerIdUsuario]    Script Date: 03/11/2020 11:48:25 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create proc [dbo].[ObtenerIdUsuario]
-@Login varchar(50)
-as
-select idUsuario from Usuarios 
-where Login=@Login 
-GO
-/****** Object:  StoredProcedure [dbo].[restaurar_personal]    Script Date: 03/11/2020 11:48:25 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create proc [dbo].[restaurar_personal]
-@Idpersonal int
-as
-update Personal set Estado = 'ACTIVO'
-where Id_personal=@Idpersonal
-GO
-/****** Object:  StoredProcedure [dbo].[restaurar_usuario]    Script Date: 03/11/2020 11:48:25 a.m. ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-create proc [dbo].[restaurar_usuario]
-@idusuario int
-as
-Update Usuarios set Estado ='ACTIVO'
-where idUsuario =@idusuario and Login&lt;&gt;'admin'
+select * from Usuarios where clave = @clave and usuario =@usuario AND estado = 'ACTIVO'
 GO
 USE [master]
 GO
-ALTER DATABASE [ORUS369] SET  READ_WRITE 
+ALTER DATABASE [Asistencia_StrixOwl] SET  READ_WRITE 
 GO</value>
   </data>
+  <metadata name="timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="timer3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>118, 17</value>
+  </metadata>
+  <metadata name="timer4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>219, 17</value>
+  </metadata>
+  <metadata name="TimerCRARINI.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>320, 17</value>
+  </metadata>
 </root>

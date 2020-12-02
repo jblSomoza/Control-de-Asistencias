@@ -10,7 +10,7 @@ namespace SistemaAsistencias.Datos
 {
     class ConexionMaestraController
     {
-        public static string conexion = @"Data source=DESKTOP-6TC7EC2\SQLEXPRESS;Initial Catalog=Asistencia_StrixOwl;User ID=sa;Password=sa123;MultipleActiveResultSets=True";
+        public static string conexion = Convert.ToString(Logica.Desencryptacion.checkServer());
         public static SqlConnection conectar = new SqlConnection(conexion);
 
         public static void abrir()

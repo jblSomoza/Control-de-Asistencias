@@ -1,6 +1,7 @@
 ﻿using SistemaAsistencias.Datos;
 using SistemaAsistencias.Logica;
 using SistemaAsistencias.Logica.AsistenteInstalacion;
+using SistemaAsistencias.Presentacion.AsistenteInstalacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,17 +29,27 @@ namespace SistemaAsistencias.Presentacion
 
         private void Login_Load(object sender, EventArgs e)
         {
-            validarConexio();
+            validarConexion();
         }
 
-        private void validarConexio() 
+        private void validarConexion() 
         {
             verificarConexion();
             if (indicador == "Correcto")
             {
-                dibujarUsuarios();
+                mostrarUsuarios();
+                if (contador == 0)
+                {
+                    Dispose();
+                    UsuarioPrincipal frm = new UsuarioPrincipal();
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    dibujarUsuarios();
+                }
             }
-            else 
+            else
             {
                 Dispose();
                 EleccionServidor frm = new EleccionServidor();
@@ -48,7 +59,10 @@ namespace SistemaAsistencias.Presentacion
 
         private void mostrarUsuarios() 
         {
-            
+            DataTable dt = new DataTable();
+            UsuarioController funcion = new UsuarioController();
+            funcion.mostrarUsuarios(ref dt);
+            contador = dt.Rows.Count;
         }
 
         private void verificarConexion() 
