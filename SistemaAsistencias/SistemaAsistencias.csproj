@@ -124,6 +124,9 @@
     <EmbeddedResource Include="Presentacion\AsistenteInstalacion\InstalacionDB.resx">
       <DependentUpon>InstalacionDB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\AsistenteInstalacion\UsuarioPrincipal.resx">
+      <DependentUpon>UsuarioPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ControlUsuario.resx">
       <DependentUpon>ControlUsuario.cs</DependentUpon>
     </EmbeddedResource>

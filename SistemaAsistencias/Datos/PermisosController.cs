@@ -22,7 +22,7 @@ namespace SistemaAsistencias.Datos
                 cmd.Parameters.AddWithValue("@idPermiso", "0");
                 cmd.Parameters.AddWithValue("@idModulo", parametros.idModulo);
                 cmd.Parameters.AddWithValue("@idUsuario", parametros.idUsuario);
-                cmd.Parameters.AddWithValue("@permisoTip", parametros.estado);
+                cmd.Parameters.AddWithValue("@permisoTip", "N");
                 cmd.ExecuteNonQuery();
                 return true;
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using SistemaAsistencias.Logica;
 
 namespace SistemaAsistencias.Datos
 {
@@ -27,5 +28,27 @@ namespace SistemaAsistencias.Datos
             finally { ConexionMaestraController.cerrar(); }
         }
 
-    }
+		public bool Insertar_Modulos(ModulosModel parametros)
+		{
+			try
+			{
+				ConexionMaestraController.abrir();
+				SqlCommand cmd = new SqlCommand("proc_insertarModulos", ConexionMaestraController.conectar);
+				cmd.CommandType = CommandType.StoredProcedure;
+				cmd.Parameters.AddWithValue("@modulo", parametros.modulo);
+				cmd.ExecuteNonQuery();
+				return true;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+				return true;
+			}
+			finally
+			{
+				ConexionMaestraController.cerrar();
+			}
+		}
+
+	}
 }
