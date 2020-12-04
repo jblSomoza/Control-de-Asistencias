@@ -29,16 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtBuscador = new System.Windows.Forms.TextBox();
-            this.dgPersonal = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelPaginado = new System.Windows.Forms.Panel();
             this.btnPagAnterior = new System.Windows.Forms.Button();
             this.btnPagUltima = new System.Windows.Forms.Button();
@@ -88,15 +84,18 @@
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dgPersonal = new System.Windows.Forms.DataGridView();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgPersonal)).BeginInit();
             this.PanelPaginado.SuspendLayout();
             this.PanelRegistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListadoCargos)).BeginInit();
             this.PanelCargos.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panelBtnAgregarPersonal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPersonal)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -173,55 +172,6 @@
             this.txtBuscador.TabIndex = 0;
             this.txtBuscador.TextChanged += new System.EventHandler(this.txtBuscador_TextChanged);
             // 
-            // dgPersonal
-            // 
-            this.dgPersonal.AllowUserToAddRows = false;
-            this.dgPersonal.AllowUserToDeleteRows = false;
-            this.dgPersonal.AllowUserToResizeRows = false;
-            this.dgPersonal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.dgPersonal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPersonal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar,
-            this.Editar});
-            this.dgPersonal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgPersonal.Location = new System.Drawing.Point(0, 100);
-            this.dgPersonal.Name = "dgPersonal";
-            this.dgPersonal.ReadOnly = true;
-            this.dgPersonal.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.dgPersonal.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgPersonal.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.dgPersonal.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgPersonal.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
-            this.dgPersonal.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgPersonal.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dgPersonal.RowTemplate.Height = 40;
-            this.dgPersonal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgPersonal.Size = new System.Drawing.Size(1307, 469);
-            this.dgPersonal.TabIndex = 1;
-            this.dgPersonal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPersonal_CellClick);
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Image = global::SistemaAsistencias.Properties.Resources.basura;
-            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 125;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Image = global::SistemaAsistencias.Properties.Resources.lapiz;
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.MinimumWidth = 6;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 125;
-            // 
             // PanelPaginado
             // 
             this.PanelPaginado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
@@ -234,9 +184,9 @@
             this.PanelPaginado.Controls.Add(this.lblPaginaActual);
             this.PanelPaginado.Controls.Add(this.label7);
             this.PanelPaginado.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelPaginado.Location = new System.Drawing.Point(0, 569);
+            this.PanelPaginado.Location = new System.Drawing.Point(0, 572);
             this.PanelPaginado.Name = "PanelPaginado";
-            this.PanelPaginado.Size = new System.Drawing.Size(1307, 100);
+            this.PanelPaginado.Size = new System.Drawing.Size(1307, 97);
             this.PanelPaginado.TabIndex = 2;
             // 
             // btnPagAnterior
@@ -375,9 +325,9 @@
             this.PanelRegistro.Controls.Add(this.label2);
             this.PanelRegistro.Controls.Add(this.label1);
             this.PanelRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PanelRegistro.Location = new System.Drawing.Point(16, 115);
+            this.PanelRegistro.Location = new System.Drawing.Point(17, 106);
             this.PanelRegistro.Name = "PanelRegistro";
-            this.PanelRegistro.Size = new System.Drawing.Size(1288, 412);
+            this.PanelRegistro.Size = new System.Drawing.Size(1257, 441);
             this.PanelRegistro.TabIndex = 3;
             this.PanelRegistro.Visible = false;
             // 
@@ -826,6 +776,54 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // dgPersonal
+            // 
+            this.dgPersonal.AllowUserToAddRows = false;
+            this.dgPersonal.AllowUserToDeleteRows = false;
+            this.dgPersonal.AllowUserToResizeRows = false;
+            this.dgPersonal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.dgPersonal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPersonal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Eliminar,
+            this.Editar});
+            this.dgPersonal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgPersonal.Location = new System.Drawing.Point(0, 100);
+            this.dgPersonal.Margin = new System.Windows.Forms.Padding(4);
+            this.dgPersonal.Name = "dgPersonal";
+            this.dgPersonal.ReadOnly = true;
+            this.dgPersonal.RowHeadersWidth = 51;
+            this.dgPersonal.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.dgPersonal.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgPersonal.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dgPersonal.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgPersonal.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dgPersonal.RowTemplate.Height = 40;
+            this.dgPersonal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgPersonal.Size = new System.Drawing.Size(1307, 472);
+            this.dgPersonal.TabIndex = 4;
+            this.dgPersonal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPersonal_CellClick);
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Image = global::SistemaAsistencias.Properties.Resources.basura;
+            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Eliminar.MinimumWidth = 6;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 125;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::SistemaAsistencias.Properties.Resources.lapiz;
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 125;
+            // 
             // Personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -840,7 +838,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgPersonal)).EndInit();
             this.PanelPaginado.ResumeLayout(false);
             this.PanelRegistro.ResumeLayout(false);
             this.PanelRegistro.PerformLayout();
@@ -849,6 +846,7 @@
             this.PanelCargos.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panelBtnAgregarPersonal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgPersonal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -856,7 +854,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgPersonal;
         private System.Windows.Forms.Panel PanelPaginado;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtBuscador;
@@ -910,8 +907,9 @@
         private System.Windows.Forms.Button btnVolverCargos;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridView dgPersonal;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -126,12 +126,14 @@ namespace SistemaAsistencias.Presentacion
         private void miEventoImagen(object sender, EventArgs e)
         {
             usuario = Convert.ToString(((PictureBox)sender).Tag);
+            Icono.Image = ((PictureBox)sender).Image;
             mostrarPanelSesion();
         }
 
         private void miEventoLabel(object sender, EventArgs e)
         {
             usuario = ((Label)sender).Text;
+            Icono.Image = ((PictureBox)sender).Image;
             mostrarPanelSesion();
         }
 
@@ -161,6 +163,9 @@ namespace SistemaAsistencias.Presentacion
             {
                 Dispose();
                 MenuPrincipal frm = new MenuPrincipal();
+                frm.idUsuario = idUsuario;
+                frm.loginV = usuario;
+                frm.Icono.Image = Icono.Image;
                 frm.ShowDialog();
             }
         }

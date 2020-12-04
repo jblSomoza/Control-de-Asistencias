@@ -75,6 +75,7 @@ namespace SistemaAsistencias.Logica
                 {
                     row.DefaultCellStyle.Font = new Font("Sego UI", 10, FontStyle.Strikeout | FontStyle.Bold);
                     row.DefaultCellStyle.ForeColor = Color.FromArgb(255, 128, 128);
+                    
                 }
             }            
         }

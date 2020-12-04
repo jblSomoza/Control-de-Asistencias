@@ -64,6 +64,7 @@ namespace SistemaAsistencias.Datos
                 SqlDataAdapter adapter = new SqlDataAdapter("proc_MostrarPermisos", ConexionMaestraController.conectar);
                 adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                 adapter.SelectCommand.Parameters.AddWithValue("@idUsuario", parametros.idUsuario);
+                adapter.Fill(dt);
             }
             catch (Exception ex)
             {

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -172,8 +172,8 @@
             this.dgUsuario.Name = "dgUsuario";
             this.dgUsuario.ReadOnly = true;
             this.dgUsuario.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.dgUsuario.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.dgUsuario.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgUsuario.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.dgUsuario.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgUsuario.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
@@ -183,6 +183,7 @@
             this.dgUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgUsuario.Size = new System.Drawing.Size(1381, 774);
             this.dgUsuario.TabIndex = 2;
+            this.dgUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuario_CellClick);
             // 
             // Eliminar
             // 
@@ -529,7 +530,7 @@
             this.dgModulos.RowTemplate.Height = 30;
             this.dgModulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgModulos.Size = new System.Drawing.Size(384, 291);
-            this.dgModulos.TabIndex = 0;
+            this.dgModulos.TabIndex = 620;
             // 
             // Marcar
             // 

@@ -79,14 +79,13 @@ namespace SistemaAsistencias.Presentacion.AsistenteInstalacion
                 parametros.idModulo = idModulo;
                 parametros.idUsuario = idUsuario;
 
-                if (funcion.insertarPermisos(parametros) == true) 
-                {
-                    MessageBox.Show("!LISTO! RECUERDA que para Iniciar Sesión tu Usuario es: " + TXTUSUARIO.Text + " y tu Contraseña es: " + TXTCONTRASEÑA.Text, "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Dispose();
-                    Login frm = new Login();
-                    frm.ShowDialog();
-                }
+                funcion.insertarPermisos(parametros);                                
             }
+
+            MessageBox.Show("!LISTO! RECUERDA que para Iniciar Sesión tu Usuario es: " + TXTUSUARIO.Text + " y tu Contraseña es: " + TXTCONTRASEÑA.Text, "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Dispose();
+            Login frm = new Login();
+            frm.ShowDialog();
         }
 
         private void insertarModulos() 

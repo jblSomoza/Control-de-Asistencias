@@ -288,7 +288,7 @@ namespace SistemaAsistencias.Presentacion
         }
 
         private void dgPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {            
             if (e.ColumnIndex == dgPersonal.Columns["Eliminar"].Index) 
             {
                 DialogResult result = MessageBox.Show("Solo se cambiara el estado para que no pueda acceder, Desea continuar?",
