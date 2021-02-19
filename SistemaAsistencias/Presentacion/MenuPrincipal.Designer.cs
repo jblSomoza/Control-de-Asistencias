@@ -63,6 +63,7 @@
             this.PanelPadre = new System.Windows.Forms.Panel();
             this.pnBienvenida = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.dlg = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -233,6 +234,7 @@
             this.btnRespaldos.Text = "Respaldos";
             this.btnRespaldos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRespaldos.UseVisualStyleBackColor = false;
+            this.btnRespaldos.Click += new System.EventHandler(this.btnRespaldos_Click);
             // 
             // panel15
             // 
@@ -280,6 +282,7 @@
             this.btnRestaurar.Text = "Restaurar DB";
             this.btnRestaurar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRestaurar.UseVisualStyleBackColor = false;
+            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
             // 
             // panel12
             // 
@@ -375,6 +378,7 @@
             this.btnRegistro.Text = "Registro";
             this.btnRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistro.UseVisualStyleBackColor = false;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
             // panel7
             // 
@@ -422,6 +426,7 @@
             this.btnConsultas.TabIndex = 2;
             this.btnConsultas.Text = "Pre planilla";
             this.btnConsultas.UseVisualStyleBackColor = false;
+            this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
             // 
             // panel3
             // 
@@ -483,6 +488,10 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Bienvenido al Sistema de Asistencia Strix Owl";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dlg
+            // 
+            this.dlg.FileName = "openFileDialog1";
             // 
             // MenuPrincipal
             // 
@@ -551,5 +560,6 @@
         private System.Windows.Forms.Panel pnBienvenida;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.PictureBox Icono;
+        private System.Windows.Forms.OpenFileDialog dlg;
     }
 }

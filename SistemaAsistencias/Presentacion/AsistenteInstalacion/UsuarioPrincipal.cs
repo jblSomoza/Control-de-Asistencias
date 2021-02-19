@@ -53,11 +53,18 @@ namespace SistemaAsistencias.Presentacion.AsistenteInstalacion
             
             if (funcion.insertarUsuario(parametros) == true) 
             {
+                InsertarCopiasDB();
                 insertarModulos();
                 obtenerIdUsuario();
                 insertarPermisos();
             }
             
+        }
+
+        private void InsertarCopiasDB() 
+        {
+            CopiasController funcion = new CopiasController();
+            funcion.insertarCopiasDB();
         }
 
         private void obtenerIdUsuario() 

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_UpgradeWizard_Files\UpgradeWizardLog.xslt"?>
+<log>
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\SistemaAsistencias.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\App.config" />
+  <event action="Analyze" type="Success" name="EleccionServidor.resx" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\Presentacion\AsistenteInstalacion\EleccionServidor.resx" />
+  <event action="Analyze" type="Success" name="InstalacionDB.resx" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\Presentacion\AsistenteInstalacion\InstalacionDB.resx" />
+  <event action="Analyze" type="Success" name="UsuarioPrincipal.resx" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\Presentacion\AsistenteInstalacion\UsuarioPrincipal.resx" />
+  <event action="Analyze" type="Success" name="ControlUsuario.resx" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\Presentacion\ControlUsuario.resx" />
+  <event action="Analyze" type="Success" name="Login.resx" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\Presentacion\Login.resx" />
+  <event action="Analyze" type="Success" name="MenuPrincipal.resx" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\Presentacion\MenuPrincipal.resx" />
+  <event action="Analyze" type="Success" name="Personal.resx" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\Presentacion\Personal.resx" />
+  <event action="Analyze" type="Success" name="ReportAsistencias.resx" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\Presentacion\Reportes\ReportAsistencias.resx" />
+  <event action="Analyze" type="Success" name="TomarAsistencias.resx" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\Presentacion\TomarAsistencias.resx" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\Properties\Resources.resx" />
+  <event action="Analyze" type="Success" name="SistemaAsistencias" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\SistemaAsistencias.csproj" />
+  <event action="Analyze" type="Success" name="SistemaAsistencias" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias.sln" />
+  <event action="Backup" type="Success" name="SistemaAsistencias" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\SistemaAsistencias.csproj" />
+  <event action="Upgrade" type="Success" name="Assembly References" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\SistemaAsistencias.csproj" />
+  <event action="Upgrade" type="Success" name="SistemaAsistencias" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias\SistemaAsistencias.csproj" />
+  <event action="Upgrade" type="Success" name="SistemaAsistencias" path="D:\Proyectos\C#\SistemaAsistencias\SistemaAsistencias.sln" />
+</log>
