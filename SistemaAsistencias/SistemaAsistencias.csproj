@@ -32,6 +32,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>StrixOwl.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>strix-owl.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -144,6 +150,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\AsistenteInstalacion\ConexionRemota.resx">
+      <DependentUpon>ConexionRemota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\AsistenteInstalacion\EleccionServidor.resx">
       <DependentUpon>EleccionServidor.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +206,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="StrixOwl.manifest" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -297,6 +307,8 @@
   <ItemGroup>
     <None Include="Resources\subir.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="strix-owl.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

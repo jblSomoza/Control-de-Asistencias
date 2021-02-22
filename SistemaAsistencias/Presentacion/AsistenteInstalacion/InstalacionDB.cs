@@ -28,12 +28,31 @@ namespace SistemaAsistencias.Logica.AsistenteInstalacion
         string ruta;
         public static int milisegundo;
         public static int segundos;
+        public static int segundos1;
+        public static int minutos1;
+        public static int milisegundo1;
 
         private void InstalacionDB_Load(object sender, EventArgs e)
         {
             centrarPaneles();
             reemplazar();
             comprobarServidores();
+            conectar();
+        }
+
+        private void conectar() 
+        {
+            if (btnInstalarServidor.Visible == true)
+            {
+                comprobarServidorNoSql();
+            }
+        }
+
+        private void comprobarServidorNoSql() 
+        {
+            txtservidor.Text = ".";
+            ejecutarScryptEliminarBase();
+            ejecutarScryptCrearDB();
         }
 
         private void centrarPaneles()
@@ -47,9 +66,9 @@ namespace SistemaAsistencias.Logica.AsistenteInstalacion
 
         private void reemplazar()
         {
-            txtCrear_procedimientos.Text = txtCrear_procedimientos.Text.Replace("Asistencia_StrixOwl", TXTbasededatos.Text);
+            txtCrear_procedimientos.Text = txtCrear_procedimientos.Text.Replace("SistemaAsistencias", TXTbasededatos.Text);
 
-            txtEliminarBase.Text = txtEliminarBase.Text.Replace("Asistencia_StrixOwl", TXTbasededatos.Text);
+            txtEliminarBase.Text = txtEliminarBase.Text.Replace("SistemaAsistencias", TXTbasededatos.Text);
             txtCrearUsuarioDb.Text = txtCrearUsuarioDb.Text.Replace("StrixOwl", txtusuario.Text);
             txtCrearUsuarioDb.Text = txtCrearUsuarioDb.Text.Replace("SistemaAsistencias", TXTbasededatos.Text);
             txtCrearUsuarioDb.Text = txtCrearUsuarioDb.Text.Replace("softwarereal", lblcontraseña.Text);
@@ -110,7 +129,11 @@ namespace SistemaAsistencias.Logica.AsistenteInstalacion
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.ToString());
+                btnInstalarServidor.Visible = true;
+                Panel6.Visible = true;
+                Panel4.Visible = false;
+                Panel4.Dock = DockStyle.None;
+                lblbuscador_de_servidores.Text = "De click a instalar Servidor, luego de click a Si cuando se le pida, luego presione ACEPTAR y espere por favor ";
             }
         }
 
@@ -191,6 +214,174 @@ namespace SistemaAsistencias.Logica.AsistenteInstalacion
 
                 }
                 Dispose();
+            }
+        }
+
+        private void btnInstalarServidor_Click(object sender, EventArgs e)
+        {            
+            try
+            {
+                txtArgumentosini.Text = txtArgumentosini.Text.Replace("PRUEBAFINAL22", lblnombredeservicio.Text);
+                TimerCRARINI.Start();
+                execute();
+                timer2.Start();
+                Panel4.Visible = true;
+                Panel4.Dock = DockStyle.Fill;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void execute() 
+        {
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "SQLEXPR_x64_ENU.exe";
+                process.StartInfo.Arguments = "/ConfigurationFile=ConfigurationFile.ini /ACTION=Install /IACCEPTSQLSERVERLICENSETERMS /SECURITYMODE=SQL /SAPWD="
+                    + lblcontraseña.Text + " /SQLSYSADMINACCOUNTS=" + nombreEquipo;
+                process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+                process.Start();
+
+                Panel4.Visible = true;
+                Panel4.Dock = DockStyle.Fill;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        private void TimerCRARINI_Tick(object sender, EventArgs e)
+        {
+            string rutaPreparar;
+            StreamWriter sw;
+            rutaPreparar = Path.Combine(Directory.GetCurrentDirectory(), "ConfigurationFile.ini");
+            rutaPreparar = rutaPreparar.Replace("Configuration.ini", @"SQLEXPR_x64_ENU\ConfigurationFile.ini");
+            if (File.Exists(rutaPreparar) == true)
+            {
+                TimerCRARINI.Stop();
+            }
+
+            try
+            {
+                sw = File.CreateText(rutaPreparar);
+                sw.WriteLine(txtArgumentosini.Text);
+                sw.Flush();
+                sw.Close();
+                TimerCRARINI.Stop();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            milisegundo1 += 1;
+            milise.Text = Convert.ToString(milisegundo1);
+            if (milisegundo1 == 60)
+            {
+                segundos1 += 1;
+                seg.Text = Convert.ToString(segundos1);
+                milisegundo1 = 0;
+            }
+
+            if (segundos1 == 60)
+            {
+                minutos1 += 1;
+                min.Text = Convert.ToString(minutos1);
+                segundos1 = 0;
+            }
+
+            if (minutos1 == 6)
+            {
+                timer2.Stop();
+                ejecutarScryptEliminarDB();
+                ejecutarScryptCrearDataB();
+                timer3.Start();
+            }
+        }
+
+        private void ejecutarScryptEliminarDB() 
+        {
+            string str;
+            SqlConnection conn = new SqlConnection("Data source=" + txtservidor.Text + ";Initial Catalog=master;Integrated Security=True");
+            str = txtEliminarBase.Text;
+            SqlCommand cmd = new SqlCommand(str, conn);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        private void ejecutarScryptCrearDataB() 
+        {
+            var cnn = new SqlConnection("Server=" + txtservidor.Text + "; " + "database=master; integrated security=yes");
+            string s = "CREATE DATABASE " + TXTbasededatos.Text;
+            SqlCommand cmd = new SqlCommand(s, cnn);
+            try
+            {
+                cnn.Open();
+                cmd.ExecuteNonQuery();
+                SavetoXML(aes.Encrypt("Data Source=" + txtservidor.Text +
+                    "; Initial Catalog=" + TXTbasededatos.Text + ";Integrated Security=True", Desencryptacion.appPwdUnique, int.Parse("256")));
+                ejecutarScript();
+                timer4.Start();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                } 
+            }
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            milisegundo1 += 1;
+            milise.Text = Convert.ToString(milisegundo1);
+            if (milisegundo1 == 60)
+            {
+                segundos1 += 1;
+                seg.Text = Convert.ToString(segundos1);
+                milisegundo1 = 0;
+            }
+
+            if (segundos1 == 60)
+            {
+                minutos1 += 1;
+                min.Text = Convert.ToString(minutos1);
+                segundos1 = 0;
+            }
+
+            if (minutos1 == 1)
+            {
+                timer2.Stop();
+                ejecutarScryptEliminarDB();
+                ejecutarScryptCrearDataB();
             }
         }
     }

@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Icono = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelSesion = new System.Windows.Forms.Panel();
@@ -48,8 +50,8 @@
             this.panelUsuario = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.Icono = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Icono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSesion.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -57,7 +59,6 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Icono)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,6 +71,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1335, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // Icono
+            // 
+            this.Icono.Location = new System.Drawing.Point(697, 3);
+            this.Icono.Name = "Icono";
+            this.Icono.Size = new System.Drawing.Size(160, 73);
+            this.Icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Icono.TabIndex = 5;
+            this.Icono.TabStop = false;
+            this.Icono.Visible = false;
             // 
             // pictureBox1
             // 
@@ -290,16 +301,6 @@
             this.label5.Text = "¿Quien esta iniciando sesion?";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Icono
-            // 
-            this.Icono.Location = new System.Drawing.Point(697, 3);
-            this.Icono.Name = "Icono";
-            this.Icono.Size = new System.Drawing.Size(160, 73);
-            this.Icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Icono.TabIndex = 5;
-            this.Icono.TabStop = false;
-            this.Icono.Visible = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -309,12 +310,13 @@
             this.Controls.Add(this.panelUsuario);
             this.Controls.Add(this.panelSesion);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "8";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Icono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSesion.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -324,7 +326,6 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panelUsuario.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Icono)).EndInit();
             this.ResumeLayout(false);
 
         }

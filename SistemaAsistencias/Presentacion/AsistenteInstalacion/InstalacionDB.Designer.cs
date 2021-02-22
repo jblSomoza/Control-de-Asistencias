@@ -345,6 +345,7 @@
             this.btnInstalarServidor.Text = "Instalar Servidor";
             this.btnInstalarServidor.UseVisualStyleBackColor = false;
             this.btnInstalarServidor.Visible = false;
+            this.btnInstalarServidor.Click += new System.EventHandler(this.btnInstalarServidor_Click);
             // 
             // panel8
             // 
@@ -466,8 +467,8 @@
             this.txtEliminarBase.Name = "txtEliminarBase";
             this.txtEliminarBase.Size = new System.Drawing.Size(413, 166);
             this.txtEliminarBase.TabIndex = 589;
-            this.txtEliminarBase.Text = "alter database Asistencia_StrixOwl set single_user with rollback immediate \nDROP " +
-    "DATABASE Asistencia_StrixOwl";
+            this.txtEliminarBase.Text = "alter database SistemaAsistencias set single_user with rollback immediate \nDROP D" +
+    "ATABASE SistemaAsistencias";
             // 
             // lblRutaInstancia
             // 
@@ -687,10 +688,12 @@
             // timer2
             // 
             this.timer2.Interval = 10;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // timer3
             // 
             this.timer3.Interval = 10;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // timer4
             // 
@@ -700,6 +703,7 @@
             // TimerCRARINI
             // 
             this.TimerCRARINI.Interval = 10;
+            this.TimerCRARINI.Tick += new System.EventHandler(this.TimerCRARINI_Tick);
             // 
             // InstalacionDB
             // 
@@ -711,9 +715,9 @@
             this.Controls.Add(this.Panel4);
             this.Controls.Add(this.Panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InstalacionDB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "InstalacionDB";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.InstalacionDB_Load);
             this.panel1.ResumeLayout(false);
